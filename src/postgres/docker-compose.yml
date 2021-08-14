@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+
+  postgres:
+    build: .
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      DATABASE_HOST: localhost
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: root

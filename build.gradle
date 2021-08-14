@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.srcmaxim.jooq'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(platform('org.jooq:jooq-parent:3.15.1'))
+    def postgresql = '42.2.23'
+
+    implementation('org.jooq:jooq')
+    implementation('org.jooq:jooq-meta')
+    implementation('org.jooq:jooq-codegen')
+    runtimeOnly('org.postgresql:postgresql:' + postgresql)
+
+    testImplementation(platform('org.junit:junit-bom:5.7.2'))
+    def assertj = '3.20.2'
+    def mockito = '3.11.1'
+
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.assertj:assertj-core:' + assertj)
+    testImplementation('org.mockito:mockito-core:' + mockito)
+    testImplementation('org.mockito:mockito-junit-jupiter:' + mockito)
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+
