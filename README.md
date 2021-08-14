@@ -1,7 +1,7 @@
 # JOOQ Example
 
 Run Docker Postgres `docker-compose -f src/postgres/docker-compose.yml up`  
-Generate JOOQ Meta:
+[Generate JOOQ Meta](src/main/java/com/github/srcmaxim/Main.java):
 
 ```java
 Configuration configuration = new Configuration()
@@ -25,7 +25,7 @@ Configuration configuration = new Configuration()
 GenerationTool.generate(configuration);
 ```
 
-Run JOOQ queries:
+[Run JOOQ queries](src/main/java/com/github/srcmaxim/Main.java):
 
 ```java
 try (Connection conn = DriverManager.getConnection(url, user, password)) {
